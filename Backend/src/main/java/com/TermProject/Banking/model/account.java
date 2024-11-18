@@ -1,19 +1,19 @@
 package com.TermProject.Banking.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
+
 @Entity
 public class account {
     @Id
     private int accnum;
-    private int balance;
+    private double balance;
     private String atype;
     @ManyToOne
     @JoinColumn(name = "branchId", nullable = false)
     private branch branchId;
-
+    @OneToOne
+    @JoinColumn(name="ssn", nullable=false)
+    private customer ssn;
     public account() {
     }
 
@@ -25,7 +25,7 @@ public class account {
         this.accnum = accnum;
     }
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 
@@ -47,5 +47,13 @@ public class account {
 
     public void setBranchId(branch branchId) {
         this.branchId = branchId;
+    }
+
+    public customer getSsn() {
+        return ssn;
+    }
+
+    public void setSsn(customer ssn) {
+        this.ssn = ssn;
     }
 }

@@ -7,7 +7,7 @@ public class branch {
     @Id
     private int branchId;
     private String bname;
-    private int assets;
+    private double assets;
     private String bcity;
     private String bstreet;
     private int totcustomers;
@@ -31,7 +31,7 @@ public class branch {
         this.bname = bname;
     }
 
-    public int getAssets() {
+    public double getAssets() {
         return assets;
     }
 

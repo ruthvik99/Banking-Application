@@ -12,7 +12,7 @@ public class transaction {
     @Id
     private int transactionId;
     private String tType;
-    private int amount;
+    private double amount;
     private Timestamp timeStamp;
     @ManyToOne
     @JoinColumn(name = "accnum", nullable = false)
@@ -37,7 +37,7 @@ public class transaction {
         this.tType = tType;
     }
 
-    public int getAmount() {
+    public double getAmount() {
         return amount;
     }
 

@@ -6,9 +6,9 @@ import jakarta.persistence.*;
 public class loan {
     @Id
     private int loanNumber;
-    private int amountLeft;
-    private int amountLoaned;
-    private int lintrestrate;
+    private double amountLeft;
+    private double amountLoaned;
+    private double lintrestrate;
     @ManyToOne
     @JoinColumn(name = "branchId", nullable = false)
     private branch branchId;
@@ -27,7 +27,7 @@ public class loan {
         this.loanNumber = loanNumber;
     }
 
-    public int getAmountLeft() {
+    public double getAmountLeft() {
         return amountLeft;
     }
 
@@ -35,7 +35,7 @@ public class loan {
         this.amountLeft = amountLeft;
     }
 
-    public int getAmountLoaned() {
+    public double getAmountLoaned() {
         return amountLoaned;
     }
 
@@ -43,7 +43,7 @@ public class loan {
         this.amountLoaned = amountLoaned;
     }
 
-    public int getLintrestrate() {
+    public double getLintrestrate() {
         return lintrestrate;
     }
 

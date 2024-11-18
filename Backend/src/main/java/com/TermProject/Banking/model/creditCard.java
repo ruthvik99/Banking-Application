@@ -1,5 +1,4 @@
 package com.TermProject.Banking.model;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -11,10 +10,10 @@ import java.util.Date;
 public class creditCard {
     @Id
     private int cardnum;
-    private int limit;
+    private double creditLimit;
     private Date expirydate;
-    private int amountDue;
-    private int cIntrestRate;
+    private double amountDue;
+    private double cIntrestRate;
     @ManyToOne
     @JoinColumn(name = "branchId", nullable = false)
     private branch branchId;
@@ -33,12 +32,12 @@ public class creditCard {
         this.cardnum = cardnum;
     }
 
-    public int getLimit() {
-        return limit;
+    public double getCreditLimit() {
+        return creditLimit;
     }
 
-    public void setLimit(int limit) {
-        this.limit = limit;
+    public void setCreditLimit(int creditLimit) {
+        this.creditLimit = creditLimit;
     }
 
     public Date getExpirydate() {
@@ -49,7 +48,7 @@ public class creditCard {
         this.expirydate = expirydate;
     }
 
-    public int getAmountDue() {
+    public double getAmountDue() {
         return amountDue;
     }
 
@@ -57,7 +56,7 @@ public class creditCard {
         this.amountDue = amountDue;
     }
 
-    public int getcIntrestRate() {
+    public double getcIntrestRate() {
         return cIntrestRate;
     }
 
