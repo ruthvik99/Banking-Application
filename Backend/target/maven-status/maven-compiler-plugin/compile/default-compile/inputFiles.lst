@@ -1,6 +1,7 @@
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/BankingApplication.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/Controller/AuthController.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/Controller/customerController.java
+/Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/config/CorsConfig.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/config/SecurityConfig.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/dto/AuthRequest.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/dto/AuthenticationResponse.java
