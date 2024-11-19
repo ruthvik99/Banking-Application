@@ -2,7 +2,12 @@
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/Controller/AuthController.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/Controller/customerController.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/config/SecurityConfig.java
+/Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/dto/AuthRequest.java
+/Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/dto/AuthenticationResponse.java
+/Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/dto/UserDto.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/entity/User.java
+/Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/model/JwtResponse.java
+/Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/model/LoginRequest.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/model/account.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/model/branch.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/model/creditCard.java
@@ -17,5 +22,6 @@
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/repository/loanRepository.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/repository/transactionRepository.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/service/AuthService.java
+/Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/service/JwtService.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/service/customerService.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/service/customerSreviceImp.java

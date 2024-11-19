@@ -7,27 +7,24 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-/*
- * This file uses BCryptPasswordEncoder to hash the password before storing it in the database.
- */
-
 @Configuration
 public class SecurityConfig {
 
-    @Bean
+    @Bean //PasswordEncoder for hashing passwords using BCrypt
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder(); //BCrypt = a secure password encoding algorithm
     }
 
-    @Bean
+    @Bean //configure HTTP security settings for the application
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable())  //disable csrf???
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**").permitAll()  //for unauthenticated access to /auth endpoints
-                        .anyRequest().authenticated()  //requiring authentication for other endpoints
+        http
+                .csrf(csrf -> csrf.disable()) //disables CSRF (Cross-Site Request Forgery)
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/auth/**").permitAll()
+                        .anyRequest().authenticated()
                 )
-                .httpBasic();  //basic authentication
-
+                .formLogin(form -> form.disable()) //for now disable form based login
+                .logout(logout -> logout.disable()); //for now disable logout (can implement logout button later)
         return http.build();
     }
 }
