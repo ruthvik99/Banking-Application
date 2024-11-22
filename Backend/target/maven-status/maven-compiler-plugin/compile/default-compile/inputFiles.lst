@@ -11,7 +11,6 @@
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/dto/AuthRequest.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/dto/AuthenticationResponse.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/dto/UserDto.java
-/Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/entity/User.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/model/JwtResponse.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/model/LoginRequest.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/model/account.java
@@ -20,7 +19,6 @@
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/model/customer.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/model/loan.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/model/transaction.java
-/Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/repository/UserRepository.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/repository/accountRepository.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/repository/branchRepository.java
 /Users/armaitykatki/Documents/CSCI 6370/Banking-Application/Backend/src/main/java/com/TermProject/Banking/repository/creditCardRepository.java

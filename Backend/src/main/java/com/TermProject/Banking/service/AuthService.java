@@ -1,7 +1,7 @@
 package com.TermProject.Banking.service;
 
-import com.TermProject.Banking.model.User;
-import com.TermProject.Banking.repository.UserRepository;
+import com.TermProject.Banking.model.customer;
+import com.TermProject.Banking.repository.customerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,10 +9,9 @@ import org.springframework.stereotype.Service;
 public class AuthService {
 
     @Autowired
-    private UserRepository userRepository;
+    private customerRepository customerRepository;
 
-    public void registerUser(User user) {
-        user.setRole("USER"); // default role "USER"
-        userRepository.save(user); //saving user in database
+    public void registerCustomer(customer customer) {
+        customerRepository.save(customer); //saving user in database
     }
 }

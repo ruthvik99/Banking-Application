@@ -8,7 +8,6 @@ com/TermProject/Banking/model/account.class
 com/TermProject/Banking/service/customerService.class
 com/TermProject/Banking/service/transactionServiceImp.class
 com/TermProject/Banking/service/transactionService.class
-com/TermProject/Banking/repository/UserRepository.class
 com/TermProject/Banking/controller/customerController.class
 com/TermProject/Banking/model/JwtResponse.class
 com/TermProject/Banking/model/loan.class
@@ -40,5 +39,4 @@ com/TermProject/Banking/repository/accountRepository.class
 com/TermProject/Banking/service/JwtService.class
 com/TermProject/Banking/service/accountService.class
 com/TermProject/Banking/service/creditCardService.class
-com/TermProject/Banking/model/User.class
 com/TermProject/Banking/service/loanServiceImp.class

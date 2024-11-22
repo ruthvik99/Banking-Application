@@ -1,43 +1,30 @@
 package com.TermProject.Banking.controller;
 
-import com.TermProject.Banking.dto.AuthRequest;
-import com.TermProject.Banking.dto.AuthenticationResponse;
-import com.TermProject.Banking.dto.UserDto;
-import com.TermProject.Banking.service.JwtService;
+import com.TermProject.Banking.model.customer;
+import com.TermProject.Banking.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
 
     @Autowired
-    private PasswordEncoder passwordEncoder;
+    private AuthService authService;
 
-    @Autowired
-    private JwtService jwtService;
-
+    // Endpoint to register a new customer
     @PostMapping("/register")
-    public String register(@RequestBody UserDto userDto) {
+    public ResponseEntity<String> register(@RequestBody customer customer) {
+        // Call the AuthService to register the customer
+        authService.registerCustomer(customer);
 
-        String encodedPassword = passwordEncoder.encode(userDto.getPassword());
-
-        // saving user in DB
-        System.out.println("Registering user: " + userDto.getUsername() + " with encoded password: " + encodedPassword);
-
-        return "User registered successfully";
-    }
-
-    @PostMapping("/login")
-    public AuthenticationResponse login(@RequestBody AuthRequest authRequest) {
-        // user authentication
-        System.out.println("Authenticating user: " + authRequest.getUsername());
-
-        // generate JWT token
-        String token = jwtService.generateToken(authRequest.getUsername());
-
-        return new AuthenticationResponse(token);
+        // Return a success response
+        return ResponseEntity.ok("Customer registered successfully");
     }
 }
