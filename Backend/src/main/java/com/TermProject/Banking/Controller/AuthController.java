@@ -27,4 +27,14 @@ public class AuthController {
         // Return a success response
         return ResponseEntity.ok("Customer registered successfully");
     }
+
+    @PostMapping("/login")
+    public String loginUser(@RequestBody customer loginRequest) {
+        boolean isAuthenticated = authService.authenticateUser(loginRequest.getUsername(), loginRequest.getPassword());
+        if (isAuthenticated) {
+            return "Login successful";
+        } else {
+            return "Invalid credentials";
+        }
+    }
 }

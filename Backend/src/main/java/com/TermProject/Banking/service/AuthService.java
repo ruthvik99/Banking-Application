@@ -14,4 +14,16 @@ public class AuthService {
     public void registerCustomer(customer customer) {
         customerRepository.save(customer); //saving user in database
     }
+
+    // Authentication method (login)
+    public boolean authenticateUser(String username, String password) {
+        // Find the customer by username
+        customer existingCustomer = customerRepository.findByUsername(username);
+
+        if (existingCustomer != null && existingCustomer.getPassword().equals(password)) {
+            return true;  // Password matches
+        } else {
+            return false;  // Invalid credentials
+        }
+    }
 }
