@@ -1,5 +1,6 @@
 package com.TermProject.Banking.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -13,6 +14,7 @@ public class transaction {
     private int transactionId;
     private String tType;
     private double amount;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Timestamp timeStamp;
     @ManyToOne
     @JoinColumn(name = "accnum", nullable = false)
@@ -41,7 +43,7 @@ public class transaction {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 

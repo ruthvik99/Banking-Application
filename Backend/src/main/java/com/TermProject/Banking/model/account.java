@@ -2,6 +2,8 @@ package com.TermProject.Banking.model;
 
 import jakarta.persistence.*;
 
+import java.util.Optional;
+
 @Entity
 public class account {
     @Id
@@ -29,7 +31,7 @@ public class account {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 

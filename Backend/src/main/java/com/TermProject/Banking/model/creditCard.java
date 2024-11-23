@@ -36,7 +36,7 @@ public class creditCard {
         return creditLimit;
     }
 
-    public void setCreditLimit(int creditLimit) {
+    public void setCreditLimit(double creditLimit) {
         this.creditLimit = creditLimit;
     }
 
@@ -52,7 +52,7 @@ public class creditCard {
         return amountDue;
     }
 
-    public void setAmountDue(int amountDue) {
+    public void setAmountDue(double amountDue) {
         this.amountDue = amountDue;
     }
 
@@ -60,7 +60,7 @@ public class creditCard {
         return cIntrestRate;
     }
 
-    public void setcIntrestRate(int cIntrestRate) {
+    public void setcIntrestRate(double cIntrestRate) {
         this.cIntrestRate = cIntrestRate;
     }
 

@@ -31,7 +31,7 @@ public class loan {
         return amountLeft;
     }
 
-    public void setAmountLeft(int amountLeft) {
+    public void setAmountLeft(double amountLeft) {
         this.amountLeft = amountLeft;
     }
 
@@ -39,7 +39,7 @@ public class loan {
         return amountLoaned;
     }
 
-    public void setAmountLoaned(int amountLoaned) {
+    public void setAmountLoaned(double amountLoaned) {
         this.amountLoaned = amountLoaned;
     }
 
@@ -47,7 +47,7 @@ public class loan {
         return lintrestrate;
     }
 
-    public void setLintrestrate(int lintrestrate) {
+    public void setLintrestrate(double lintrestrate) {
         this.lintrestrate = lintrestrate;
     }
 
