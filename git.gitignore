@@ -1,0 +1,16 @@
+# Node.js modules (Frontend)
+Frontend/node_modules/
+
+# Build and output directories
+Frontend/build/
+Backend/target/
+
+# Environment files
+.env
+
+# OS-specific files
+.DS_Store
+
+# IDE-specific files
+.idea/
+*.iml

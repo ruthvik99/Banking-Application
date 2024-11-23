@@ -3,10 +3,13 @@ import './SignupForm.css';
 
 const SignupForm = () => {
     const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
+        ssn: '',
+        cName: '',
+        cCity: '',
+        phoneNumber: '',
+        username: '',
         password: '',
+        cScore: '',
     });
 
     const handleChange = (e) => {
@@ -20,7 +23,7 @@ const SignupForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:8080/api/signup', {
+            const response = await fetch('http://localhost:8080/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -30,7 +33,15 @@ const SignupForm = () => {
 
             if (response.ok) {
                 alert('Signup successful!');
-                setFormData({ firstName: '', lastName: '', email: '', password: '' });
+                setFormData({
+                    ssn: '',
+                    cName: '',
+                    cCity: '',
+                    phoneNumber: '',
+                    username: '',
+                    password: '',
+                    cScore: '',
+                });
             } else {
                 const errorData = await response.json();
                 alert(`Signup failed: ${errorData.message}`);
@@ -45,34 +56,58 @@ const SignupForm = () => {
         <div className="signup-form-container">
             <form onSubmit={handleSubmit} className="signup-form">
                 <div className="form-group">
-                    <label htmlFor="firstName">First Name:</label>
+                    <label htmlFor="ssn">SSN:</label>
                     <input
                         type="text"
-                        id="firstName"
-                        name="firstName"
-                        value={formData.firstName}
+                        id="ssn"
+                        name="ssn"
+                        value={formData.ssn}
                         onChange={handleChange}
                         required
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="lastName">Last Name:</label>
+                    <label htmlFor="cName">Full Name:</label>
                     <input
                         type="text"
-                        id="lastName"
-                        name="lastName"
-                        value={formData.lastName}
+                        id="cName"
+                        name="cName"
+                        value={formData.cName}
                         onChange={handleChange}
                         required
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="email">Email:</label>
+                    <label htmlFor="cCity">City:</label>
                     <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
+                        type="text"
+                        id="cCity"
+                        name="cCity"
+                        value={formData.cCity}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="phoneNumber">Phone Number:</label>
+                    <input
+                        type="tel"
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        value={formData.phoneNumber}
+                        onChange={handleChange}
+                        required
+                        pattern="\d{10}" // Ensures the phone number is 10 digits
+                        title="Phone number must be 10 digits"
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="username">Username:</label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        value={formData.username}
                         onChange={handleChange}
                         required
                     />
@@ -86,6 +121,22 @@ const SignupForm = () => {
                         value={formData.password}
                         onChange={handleChange}
                         required
+                        minLength="6"
+                        title="Password must be at least 6 characters long"
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="cScore">Credit Score:</label>
+                    <input
+                        type="number"
+                        id="cScore"
+                        name="cScore"
+                        value={formData.cScore}
+                        onChange={handleChange}
+                        required
+                        min="0"
+                        max="850"
+                        title="Credit score must be between 0 and 850"
                     />
                 </div>
                 <button type="submit" className="signup-button">

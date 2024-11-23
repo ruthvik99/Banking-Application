@@ -1,7 +1,7 @@
 import api from './api';
 
 export const login = async ({ email, password }) => {
-  const response = await fetch('http://localhost:8080/api/login', {
+  const response = await fetch('http://localhost:8080/auth/login', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
@@ -19,6 +19,6 @@ export const login = async ({ email, password }) => {
 };
 
 export const signup = async (userData) => {
-  const response = await api.post('/auth/signup', userData);
+  const response = await api.post('/auth/register', userData);
   return response.data;
 };

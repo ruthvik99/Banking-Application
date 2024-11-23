@@ -1,4 +1,4 @@
-package com.TermProject.Banking.controller;
+package com.TermProject.Banking.Controller;
 
 import com.TermProject.Banking.model.customer;
 import com.TermProject.Banking.service.AuthService;
