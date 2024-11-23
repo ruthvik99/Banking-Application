@@ -13,6 +13,7 @@ public class branch {
     private int totcustomers;
 
     public branch() {
+
     }
 
     public int getBranchId() {

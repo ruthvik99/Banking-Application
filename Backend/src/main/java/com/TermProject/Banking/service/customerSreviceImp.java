@@ -25,4 +25,9 @@ public class customerSreviceImp implements customerService{
     public customer findById(int ssn) {
         return customerRepo.findById(ssn).orElseThrow(() -> new NoSuchElementException("Customer not found"));
     }
+
+    @Override
+    public customer findByUsername(String username) {
+        return customerRepo.findByUsername(username);
+    }
 }

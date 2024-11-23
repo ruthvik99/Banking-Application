@@ -1,16 +1,18 @@
 .login-form-container {
     max-width: 400px;
     margin: 2rem auto;
-    padding: 1rem;
+    padding: 1.5rem; /* Increased padding for better spacing */
     border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px; /* Rounded corners for a modern look */
+    background-color: #ffffff; /* Changed to pure white for a clean design */
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for more depth */
+    font-family: 'Arial', sans-serif; /* Added a default font */
 }
 
 .login-form {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem; /* Added consistent spacing between form elements */
 }
 
 .form-group {
@@ -22,34 +24,64 @@ label {
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
-    color: #555;
+    color: #333; /* Darker color for better readability */
 }
 
 input {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.75rem; /* Increased padding for better usability */
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 8px; /* Softer input styling */
     box-sizing: border-box;
+    font-size: 1rem; /* Increased font size */
+    color: #333; /* Input text color */
+    background-color: #f9f9f9; /* Subtle background for inputs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth focus transition */
 }
 
 input:focus {
     outline: none;
     border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* More pronounced focus effect */
 }
 
 .login-button {
-    padding: 0.5rem 1rem;
-    background: #007bff;
+    padding: 0.75rem 1.5rem; /* Larger button for better usability */
+    background: linear-gradient(90deg, #007bff, #0056b3); /* Gradient background for a modern look */
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px; /* Rounded corners */
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase; /* Capitalized text for emphasis */
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .login-button:hover {
-    background: #0056b3;
+    background: linear-gradient(90deg, #0056b3, #004085); /* Darker gradient on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    text-align: center; /* Center the error message */
+}
+
+@media (max-width: 500px) {
+    .login-form-container {
+        padding: 1rem; /* Adjust padding for smaller screens */
+    }
+
+    input {
+        padding: 0.5rem; /* Adjust input padding */
+    }
+
+    .login-button {
+        padding: 0.5rem 1rem; /* Adjust button size */
+        font-size: 0.9rem; /* Adjust font size */
+    }
 }

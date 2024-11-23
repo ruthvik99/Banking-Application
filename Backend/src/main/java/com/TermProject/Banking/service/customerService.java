@@ -9,4 +9,5 @@ public interface customerService {
     public customer saveCustomer(customer customer);
     public List<customer> getAllCustomers();
     public customer findById(int ssn);
+    customer findByUsername(String username);
 }

@@ -3,17 +3,20 @@ import { login } from '../services/auth';
 import './LoginForm.css';
 
 const LoginForm = () => {
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState(''); // Updated to use "username"
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setError(''); // Clear any previous errors
         try {
-            const data = await login({ email, password });
-            alert('Login successful: ' + JSON.stringify(data));
+            const data = await login({ username, password }); // Updated to send "username" and "password"
+            alert('Login successful!');
+            // Redirect to the dashboard or another page after login
+            window.location.href = '/dashboard'; // Adjust the route as needed
         } catch (err) {
-            setError('Invalid login credentials');
+            setError(err.message || 'Invalid login credentials'); // Show backend error message if available
         }
     };
 
@@ -21,13 +24,13 @@ const LoginForm = () => {
         <div className="login-form-container">
             <form onSubmit={handleSubmit} className="login-form">
                 <div className="form-group">
-                    <label htmlFor="email">Email:</label>
+                    <label htmlFor="username">Username:</label>
                     <input
-                        type="email"
-                        id="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Email"
+                        type="text"
+                        id="username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        placeholder="Username"
                         required
                     />
                 </div>
