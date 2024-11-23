@@ -8,4 +8,5 @@ import java.util.List;
 public interface accountService {
     public account saveAccount(account account);
     public List<account> getAllAccounts();
+    public account findById(int id);
 }

@@ -1,11 +1,14 @@
 package com.TermProject.Banking.service;
 
 import com.TermProject.Banking.model.account;
+import com.TermProject.Banking.model.branch;
 import com.TermProject.Banking.repository.accountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 public class accountServiceImp implements accountService{
@@ -18,5 +21,14 @@ public class accountServiceImp implements accountService{
     @Override
     public List<account> getAllAccounts() {
         return accountRepo.findAll();
+    }
+    @Override
+    public account findById(int id){
+        Optional<account> optional = accountRepo.findById(id);
+        if(optional.isPresent()){
+            return optional.get();
+        } else {
+            throw new NoSuchElementException("Account not found");
+        }
     }
 }

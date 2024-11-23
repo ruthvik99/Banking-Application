@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 public class branchServiceImp implements branchService {
@@ -20,5 +22,14 @@ public class branchServiceImp implements branchService {
     @Override
     public List<branch> getAllBranches() {
         return branchRepo.findAll();
+    }
+
+    public branch findById(int id){
+        Optional<branch> optional = branchRepo.findById(id);
+        if(optional.isPresent()){
+            return optional.get();
+        } else {
+            throw new NoSuchElementException("Branch not found");
+        }
     }
 }
