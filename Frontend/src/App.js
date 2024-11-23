@@ -5,6 +5,9 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import NotFound from './pages/NotFound';
 import Dashboard from './pages/Dashboard';
+import Profile from './components/Profile';
+import Deposit from './components/Deposit';
+import Loan from './components/Loan';
 import PrivateRoute from './components/PrivateRoute'; // Make sure this file exists
 import './App.css';
 
@@ -20,6 +23,30 @@ function App() {
                   element={
                       <PrivateRoute>
                           <Dashboard />
+                      </PrivateRoute>
+                  } 
+              />
+              <Route 
+                  path="/dashboard/profile" 
+                  element={
+                      <PrivateRoute>
+                          <Profile />
+                      </PrivateRoute>
+                  } 
+              />
+              <Route 
+                  path="/dashboard/deposit" 
+                  element={
+                      <PrivateRoute>
+                          <Deposit />
+                      </PrivateRoute>
+                  } 
+              />
+              <Route 
+                  path="/dashboard/loan" 
+                  element={
+                      <PrivateRoute>
+                          <Loan />
                       </PrivateRoute>
                   } 
               />
