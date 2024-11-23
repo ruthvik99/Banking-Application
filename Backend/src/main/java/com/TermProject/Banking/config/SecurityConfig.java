@@ -2,6 +2,7 @@ package com.TermProject.Banking.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -20,10 +21,10 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) //disables CSRF (Cross-Site Request Forgery)
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/auth/**").permitAll()
+                        .requestMatchers("/**").permitAll()
                         .anyRequest().authenticated()
                 )
-                .formLogin(form -> form.disable()) //for now disable form based login
+                .formLogin(form -> form.disable()) //for now disable form based login  Customizer.withDefaults()
                 .logout(logout -> logout.disable()); //for now disable logout (can implement logout button later)
         return http.build();
     }
