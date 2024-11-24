@@ -9,16 +9,25 @@
 
 .nav-list {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end; 
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+.nav-list li {
+    margin: 0 15px;
 }
 
 .nav-link {
     color: white;
     text-decoration: none;
     font-size: 18px;
+    transition: color 0.3s ease; 
+}
+
+.nav-link:hover {
+    color: #00bcd4; 
 }
 
 .logout-button {
@@ -27,4 +36,5 @@
     border: none;
     font-size: 18px;
     cursor: pointer;
+    transition: color 0.3s ease; 
 }
