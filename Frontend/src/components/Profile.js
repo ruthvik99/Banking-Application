@@ -39,11 +39,27 @@ const Profile = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Updated User Details:", userDetails);
-        // Here you would typically send the updated details to your backend API
-        alert("Profile updated successfully!");
+        try {
+            const response = await fetch('http://localhost:8080/api/user/update-profile', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`, 
+                },
+                body: JSON.stringify(userDetails),
+            });
+    
+            if (response.ok) {
+                alert('Profile updated successfully!');
+            } else {
+                alert('Failed to update profile!');
+            }
+        } catch (error) {
+            console.error('Error updating profile:', error);
+            alert('Error updating profile!');
+        }        
     };
 
     return (
