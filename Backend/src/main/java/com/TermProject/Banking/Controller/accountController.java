@@ -27,7 +27,8 @@ public class accountController {
 
     @PostMapping("/add")
     public ResponseEntity<String> add(@RequestBody Map<String, Object> accountData) {
-        int branchId = (int) accountData.get("branchId");
+        System.out.println("Received data: " + accountData);
+        int branchId = Integer.parseInt(accountData.get("branchId").toString());
         int ssn = (int) accountData.get("ssn");
 
         branch branch = branchService.findById(branchId);
@@ -42,7 +43,8 @@ public class accountController {
 
         account account = new account();
         account.setAccnum((int) accountData.get("accnum"));
-        account.setBalance((double) accountData.get("balance"));
+        account.setBalance(Double.valueOf(accountData.get("balance").toString()));
+        // account.setBalance((double) accountData.get("balance"));
         account.setAtype((String) accountData.get("atype"));
         account.setBranchId(branch);
         account.setSsn(customer);

@@ -25,8 +25,7 @@ public class transactionController {
 
     @PostMapping("/add")
     public ResponseEntity<String> add(@RequestBody Map<String, Object> accountData) throws ParseException {
-        int accnum = (int) accountData.get("accnum");
-
+        int accnum = Integer.parseInt(accountData.get("accnum").toString());
         account account = accountService.findById(accnum);
         if (account == null) {
             return ResponseEntity.badRequest().body("Account not found with number: " + accnum);

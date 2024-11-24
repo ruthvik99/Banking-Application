@@ -31,7 +31,7 @@ public class loanController {
 
     @PostMapping("/add")
     public ResponseEntity<String> add(@RequestBody Map<String, Object> accountData) throws ParseException {
-        int branchId = (int) accountData.get("branchId");
+        int branchId = Integer.parseInt(accountData.get("branchId").toString());
         int ssn = (int) accountData.get("ssn");
 
         branch branch = branchService.findById(branchId);
@@ -46,9 +46,9 @@ public class loanController {
 
         loan loan = new loan();
         loan.setLoanNumber((int) accountData.get("loanNumber"));
-        loan.setAmountLoaned((double) accountData.get("amountLoaned"));
-        loan.setAmountLeft((double) accountData.get("amountLeft"));
-        loan.setLintrestrate((double) accountData.get("lintrestrate"));
+        loan.setAmountLoaned(Double.parseDouble(accountData.get("amountLoaned").toString()));
+        loan.setAmountLeft(Double.parseDouble(accountData.get("amountLeft").toString()));
+        loan.setLintrestrate(Double.parseDouble(accountData.get("lintrestrate").toString()));
         loan.setBranchId(branch);
         loan.setSsn(customer);
 

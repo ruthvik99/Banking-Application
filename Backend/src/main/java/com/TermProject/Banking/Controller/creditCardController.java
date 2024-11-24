@@ -20,6 +20,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/creditCard")
 public class creditCardController {
+
     @Autowired
     private creditCardService creditCardService;
 
@@ -31,9 +32,11 @@ public class creditCardController {
 
     @PostMapping("/add")
     public ResponseEntity<String> add(@RequestBody Map<String, Object> accountData) throws ParseException {
-        int branchId = (int) accountData.get("branchId");
+        // Parse branchId from string to int
+        int branchId = Integer.parseInt(accountData.get("branchId").toString());
         int ssn = (int) accountData.get("ssn");
 
+        // Retrieve branch and customer data
         branch branch = branchService.findById(branchId);
         if (branch == null) {
             return ResponseEntity.badRequest().body("Branch not found with ID: " + branchId);
@@ -44,19 +47,33 @@ public class creditCardController {
             return ResponseEntity.badRequest().body("Customer not found with SSN: " + ssn);
         }
 
+        // Create and set up the CreditCard object
         creditCard cc = new creditCard();
-        cc.setCardnum((int) accountData.get("cardnum"));
-        cc.setCreditLimit((double) accountData.get("creditLimit"));
+
+        // Parse cardnum from string to int
+        cc.setCardnum(Integer.parseInt(accountData.get("cardnum").toString()));
+
+        // Parse creditLimit from string to double
+        cc.setCreditLimit(Double.parseDouble(accountData.get("creditLimit").toString()));
+
+        // Parse expirydate from string to Date
         String expString = (String) accountData.get("expirydate");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date expDate = sdf.parse(expString);
         cc.setExpirydate(expDate);
-        cc.setAmountDue((double) accountData.get("amountDue"));
-        cc.setcIntrestRate((double) accountData.get("cIntrestRate"));
+
+        // Parse amountDue from string to double
+        cc.setCreditLimit(Double.parseDouble(accountData.get("amountDue").toString()));
+
+        // Parse cIntrestRate from string to double
+        cc.setCreditLimit(Double.parseDouble(accountData.get("cIntrestRate").toString()));
+        // Set the branch and customer to the CreditCard object
         cc.setBranchId(branch);
         cc.setSsn(customer);
 
+        // Save the CreditCard object
         creditCardService.saveCreditCard(cc);
+
         return ResponseEntity.ok("New Credit Card added successfully");
     }
 
