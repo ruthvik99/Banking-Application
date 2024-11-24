@@ -10,6 +10,16 @@ import Deposit from './components/Deposit';
 import Loan from './components/Loan';
 import PrivateRoute from './components/PrivateRoute'; // Make sure this file exists
 import './App.css';
+import AddCustomer from './components/AddCustomer';
+import ViewCustomers from './components/ViewCustomer';
+import AddBranch from './components/AddBranch';
+import ViewBranches from './components/ViewBranches';
+import AddAccount from './components/AddAccount';
+import ViewAccounts from './components/ViewAccounts';
+import AddCreditCard from './components/AddCreditCard';
+import ViewCreditCards from './components/ViewCreditCards';
+import AddLoan from './components/AddLoan';
+import ViewLoans from './components/ViewLoans';
 
 function App() {
   return (
@@ -50,6 +60,16 @@ function App() {
                         </PrivateRoute>
                     } 
                 />
+              <Route path = "/add-customer" element = {<AddCustomer />} />
+              <Route path = "/view-customers" element = {<ViewCustomers />} />
+              <Route path = "/add-branch" element = {<AddBranch />} />
+              <Route path = "/view-branches" element = {<ViewBranches />} />
+              <Route path = "/add-account" element = {<AddAccount />} />
+              <Route path = "/view-accounts" element = {<ViewAccounts />} />
+              <Route path = "/add-cc" element = {<AddCreditCard />} />
+              <Route path = "/view-ccs" element = {<ViewCreditCards />} />
+              <Route path = "/add-loan" element = {<AddLoan />} />
+              <Route path = "/view-loans" element = {<ViewLoans />} />
               <Route path="*" element={<NotFound />} />
           </Routes>
       </Router>
