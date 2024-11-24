@@ -36,7 +36,7 @@ public class branch {
         return assets;
     }
 
-    public void setAssets(int assets) {
+    public void setAssets(double assets) {
         this.assets = assets;
     }
 
