@@ -1,10 +1,31 @@
 .navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    background-color: #333; 
+    color: white; 
+    padding: 10px; 
+    position: sticky; 
+    top: 0;
+    z-index: 1000; 
 }
 
-li {
-    display: inline;
-    margin: 10px;
+.navbar ul {
+    display: flex; 
+    justify-content: space-around; 
+    list-style: none; /* Ensure no bullet points */
+    margin: 0; 
+    padding: 0; 
+}
+
+.navbar li {
+    margin: 0; 
+}
+
+.navbar a {
+    color: white; 
+    text-decoration: none; 
+    font-size: 18px; 
+    transition: color 0.3s ease; 
+}
+
+.navbar a:hover {
+    color: #00bcd4; 
 }
