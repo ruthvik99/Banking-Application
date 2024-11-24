@@ -6,8 +6,7 @@ const Taskbar = () => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        // Clear user session data if needed (e.g., localStorage, cookies)
-        // For now, we'll simply navigate to the homepage
+        localStorage.removeItem("token");
         navigate('/');
     };
 
@@ -15,9 +14,9 @@ const Taskbar = () => {
         <div className="taskbar">
             <ul className="nav-list">
                 <li><Link to="/dashboard" className="nav-link">Dashboard</Link></li>
-                <li><Link to="/profile" className="nav-link">Profile</Link></li>
-                <li><Link to="/deposit" className="nav-link">Deposit</Link></li>
-                <li><Link to="/loans" className="nav-link">Loans</Link></li>
+                <li><Link to="/dashboard/profile" className="nav-link">Profile</Link></li>
+                <li><Link to="/dashboard/deposit" className="nav-link">Deposit</Link></li>
+                <li><Link to="/dashboard/loan" className="nav-link">Loan</Link></li>
                 <li>
                     <button onClick={handleLogout} className="logout-button">Log Out</button>
                 </li>

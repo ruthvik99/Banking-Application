@@ -19,37 +19,37 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route 
-                  path="/dashboard" 
-                  element={
-                      <PrivateRoute>
-                          <Dashboard />
-                      </PrivateRoute>
-                  } 
-              />
-              <Route 
-                  path="/dashboard/profile" 
-                  element={
-                      <PrivateRoute>
-                          <Profile />
-                      </PrivateRoute>
-                  } 
-              />
-              <Route 
-                  path="/dashboard/deposit" 
-                  element={
-                      <PrivateRoute>
-                          <Deposit />
-                      </PrivateRoute>
-                  } 
-              />
-              <Route 
-                  path="/dashboard/loan" 
-                  element={
-                      <PrivateRoute>
-                          <Loan />
-                      </PrivateRoute>
-                  } 
-              />
+                    path="/dashboard" 
+                    element={
+                        <PrivateRoute>
+                            <Dashboard />
+                        </PrivateRoute>
+                    } 
+                />
+                <Route 
+                    path="/dashboard/profile" 
+                    element={
+                        <PrivateRoute>
+                            <Profile />
+                        </PrivateRoute>
+                    } 
+                />
+                <Route 
+                    path="/dashboard/deposit" 
+                    element={
+                        <PrivateRoute>
+                            <Deposit />
+                        </PrivateRoute>
+                    } 
+                />
+                <Route 
+                    path="/dashboard/loan" 
+                    element={
+                        <PrivateRoute>
+                            <Loan />
+                        </PrivateRoute>
+                    } 
+                />
               <Route path="*" element={<NotFound />} />
           </Routes>
       </Router>

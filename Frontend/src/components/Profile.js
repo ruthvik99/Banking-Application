@@ -8,7 +8,7 @@ const Profile = () => {
             <div style={{ padding: '20px', textAlign: 'center' }}>
                 <h1>Profile</h1>
                 <p>Here you can update your personal profile details.</p>
-                {/* Add form or other content related to profile management */}
+                {/* Add editting info */}
             </div>
         </div>
     );
